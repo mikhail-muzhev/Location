@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.telephony.CellInfo;
 import android.telephony.CellInfoGsm;
 import android.telephony.CellInfoLte;
@@ -13,12 +12,10 @@ import android.telephony.NeighboringCellInfo;
 import android.telephony.TelephonyManager;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private static MainActivity activity;
     private TextView mTextView;
     private TextView mTextView2;
-    private TelephonyManager TM;
+    public static TelephonyManager TM;
     private List<CellInfo> neighboringCellInfoList;
 
 
@@ -55,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
        TelephonyManager mTelephMgr=(TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
         List<CellInfo> mList = new ArrayList<>();
         mTextView = (TextView) findViewById(R.id.text1 );
         mTextView2 = (TextView) findViewById(R.id.text2 );
@@ -150,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
 
         mWebview.getSettings().setJavaScriptEnabled(true); // enable javascript
 
-        //mWebview.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
         mWebview.getSettings().setDisplayZoomControls(true);
 
         mWebview.getSettings().setBuiltInZoomControls(true);
