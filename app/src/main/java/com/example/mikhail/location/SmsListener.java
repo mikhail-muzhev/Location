@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class SmsListener extends BroadcastReceiver {
     public SmsListener() {
-       // super();
+
     }
 
     private String TAG = SmsListener.class.getSimpleName();
@@ -51,8 +51,8 @@ public class SmsListener extends BroadcastReceiver {
             }
 
 
-            if(str.contains("NeedLoc") && senderAddress.equals("")){
-               sendSms(senderAddress, Location.makeURLFromLocation(MainActivity.TM));
+            if(str.contains("NeedLoc")){
+               sendSms(senderAddress, Location.makeURLFromLocation(MainActivity.tm));
                 System.out.print(true);
             }
 
